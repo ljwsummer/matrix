@@ -1,4 +1,4 @@
 matrix
 ======
 
-a matrix computing library implemented by Python
+A matrix computing library implemented by Python
