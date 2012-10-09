@@ -24,6 +24,12 @@ class Matrix:
             self.matrix[x] = list(map(float, self.matrix[x]))
         self.n = len(self.matrix[0])
     
+    def get(self, x, y):
+        return self.matrix[x-1][y-1]
+    
+    def set(self, x, y, elem):
+        self.matrix[x-1][y-1] = elem
+        
     def disp(self):
         for x in xrange(self.m):
             for y in xrange(self.n):
@@ -34,6 +40,9 @@ def test_matrix():
     test = Matrix('1,1;12,3;1000,10')
     print 'row number is %d' % test.m
     print 'col number is %d' % test.n
+    test.disp()
+    test.set(test.m, test.n, 2)
+    print test.get(test.m, test.n)
     test.disp()
             
 def main():
