@@ -19,7 +19,7 @@ class Matrix:
           1 3 4
         its raw expression is: '3,2,3;1,3,4'
         comma to divide the elements in a row
-        semicolon to divide the different columns
+        semicolon to divide the different rows
     '''
     def __parse(self, raw_matrix):
         self.m = -1
