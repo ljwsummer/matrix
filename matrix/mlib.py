@@ -1,9 +1,18 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
+"""
+matrix lib
+"""
+
+from __future__ import absolute_import
+
 import random
 
-import matrix
+from matrix import  matrix
+
+__author__ = "Jiawang Liu <ljwsummer@gmail.com>"
+__version__ = "1.0.0"
 
 # custom matrix
 def custom(m, n, elem):
@@ -51,19 +60,5 @@ def trans(matrix):
         for y in xrange(matrix.m):
             ret.set(x, y, matrix.get(y, x))
     return ret
-    
-def test():
-    A = rand(3,2)
-    A.disp('a random matrix A:')
-    
-    T = trans(A)
-    T.disp('transpose of matrix A:')
-    
-    I = eye(3)
-    I.disp('a diagonal matrix I:')
 
-def main():
-    test()
-    
-if __name__ == '__main__':
-    main()
+  

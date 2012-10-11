@@ -1,6 +1,11 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
+"""
+Matrix class
+"""
+__author__ = "Jiawang Liu <ljwsummer@gmail.com>"
+__version__ = "1.0.0"
 
 class Matrix:
     
@@ -13,15 +18,17 @@ class Matrix:
         for x in xrange(self.m):
             assert len(self.matrix[x]) == self.n, 'ERROR invalid raw matrix'
     
-    ''' use the same input format of Matlab
+   
+    def __parse(self, raw_matrix):
+        """ 
+        use the same input format of Matlab
         for example, a 2*3 matrix:
-          3 2 3
-          1 3 4
+            3 2 3
+            1 3 4
         its raw expression is: '3,2,3;1,3,4'
         comma to divide the elements in a row
         semicolon to divide the different rows
-    '''
-    def __parse(self, raw_matrix):
+        """
         self.m = -1
         self.n = -1
         
