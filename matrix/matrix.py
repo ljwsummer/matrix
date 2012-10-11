@@ -56,16 +56,3 @@ class Matrix:
                 print '%10.3f' % self.matrix[x][y],
             print
         
-def test_matrix():
-    A = Matrix('1,1;12,3;1000,10')
-    print 'row number is %d' % A.m
-    print 'col number is %d' % A.n
-    A.disp('matrix A:')
-    A.set(A.m, A.n, 2)
-    A.disp('after set the bottom right corner elements as 2, matrix A:')
-            
-def main():
-    test_matrix()
-
-if __name__ == '__main__':
-    main()
