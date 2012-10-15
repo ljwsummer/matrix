@@ -12,6 +12,12 @@ def test():
     
     I = mlib.eye(3)
     I.disp('a diagonal matrix I:')
+    
+    D = mlib.diag(I)
+    D.disp('diagonal element of matrix I:')
+    
+    D = mlib.diag([1,2,3])
+    D.disp('a custom diagonal matrix:')
 
 def main():
     test()

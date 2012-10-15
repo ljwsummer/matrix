@@ -53,6 +53,22 @@ def eye(m, n = -1):
         ret.set(x, x, 1)
     return ret
 
+# custom diagonal matrix or return the diagonal element of a matrix
+def diag(ins):
+    if isinstance(ins, matrix.Matrix):
+        min = ins.m if ins.m < ins.n else ins.n
+        temp = []
+        for x in xrange(1, min+1):
+            temp.append(str(ins.get(x,x)))
+        return matrix.Matrix(';'.join(temp))
+    elif isinstance(ins, list):
+        ret = zeros(len(ins))
+        for x in xrange(1, ret.m+1):
+            ret.set(x, x, ins[x-1])
+        return ret
+    else:
+        print >> sys.stderr, 'ERROR the parameter must be a matrix or list.'
+        
 # trnaspose of matrix   
 def trans(matrix):
     ret = zeros(matrix.n, matrix.m)
