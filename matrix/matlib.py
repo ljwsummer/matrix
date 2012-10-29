@@ -61,14 +61,15 @@ def diag(ins):
         temp = []
         for x in xrange(1, min+1):
             temp.append(str(ins.get(x,x)))
-        return matrix.Matrix(';'.join(temp))
+        ret = matrix.Matrix(';'.join(temp))
     elif isinstance(ins, list):
         ret = zeros(len(ins))
         for x in xrange(1, ret.m+1):
             ret.set(x, x, ins[x-1])
-        return ret
     else:
         print >> sys.stderr, 'ERROR the parameter must be a matrix or list.'
+        ret = None
+    return ret
         
 # transpose of matrix   
 def trans(mat):

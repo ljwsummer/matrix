@@ -4,24 +4,21 @@
 from matrix import  matlib
 
 def test():
-    A = matlib.rand(3,3)
-    A.disp('a random matrix A:')
+    R = matlib.rand(3,3)
+    R.disp('A random matrix R:')
     
-    T = matlib.trans(A)
-    T.disp('transpose of matrix A:')
+    T = matlib.trans(R)
+    T.disp('Transpose of matrix R:')
     
     I = matlib.eye(3)
-    I.disp('a diagonal matrix I:')
+    I.disp('A diagonal matrix I:')
     
-    D = matlib.diag(I)
-    D.disp('diagonal element of matrix I:')
-    
-    D = matlib.diag([1,2,3])
-    D.disp('a custom diagonal matrix:')
+    matlib.diag(I).disp('Diagonal element of matrix I:')
+    matlib.diag([1,2,3]).disp('Make a custom diagonal matrix:')
     
     M = matlib.dot_multi(T, I)
-    M.disp('dot multiply tow matrices:')
-    matlib.dot_multi(2, M).disp('dot multiply a number with a matrix:')
+    M.disp('Dot multiply tow matrices:')
+    matlib.dot_multi(2, M).disp('Dot multiply a number with a matrix:')
 
 def main():
     test()
