@@ -4,7 +4,7 @@
 from matrix import  matlib
 
 def test():
-    A = matlib.rand(3,2)
+    A = matlib.rand(3,3)
     A.disp('a random matrix A:')
     
     T = matlib.trans(A)
@@ -18,6 +18,10 @@ def test():
     
     D = matlib.diag([1,2,3])
     D.disp('a custom diagonal matrix:')
+    
+    M = matlib.dot_multi(T, I)
+    M.disp('dot multiply tow matrices:')
+    matlib.dot_multi(2, M).disp('dot multiply a number with a matrix:')
 
 def main():
     test()

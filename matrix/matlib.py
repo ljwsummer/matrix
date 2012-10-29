@@ -8,6 +8,7 @@ matrix lib
 from __future__ import absolute_import
 
 import random
+import sys
 
 from matrix import  matrix
 
@@ -69,12 +70,38 @@ def diag(ins):
     else:
         print >> sys.stderr, 'ERROR the parameter must be a matrix or list.'
         
-# trnaspose of matrix   
-def trans(matrix):
-    ret = zeros(matrix.n, matrix.m)
-    for x in xrange(matrix.n):
-        for y in xrange(matrix.m):
-            ret.set(x, y, matrix.get(y, x))
+# transpose of matrix   
+def trans(mat):
+    ret = zeros(mat.n, mat.m)
+    for x in xrange(1, mat.n + 1):
+        for y in xrange(1, mat.m + 1):
+            ret.set(x, y, mat.get(y, x))
     return ret
 
+# dot multiply two matrices
+def _dot_multi_mat(mat1, mat2):
+    ret = zeros(mat1.m, mat1.n)
+    if mat1.m == mat2.m and mat1.n == mat2.n:
+        for x in xrange(1, mat1.m + 1):
+            for y in xrange(1, mat1.n + 1):
+                ret.set(x, y, mat1.get(x, y) * mat2.get(x, y))
+    else:
+        print >> sys.stderr, 'ERROR the size of tow matrices are not same.'
+        ret = None
+    return ret
+
+# dot multiply an element or a matrix with another matrix
+def dot_multi(ins, mat):
+    ret = None
+    if isinstance(ins, int) or isinstance(ins, float):
+        ret = custom(mat.m, mat.n, ins)
+    if ret != None:
+        ret = _dot_multi_mat(ret, mat)
+    elif isinstance(ins, matrix.Matrix):
+        ret = _dot_multi_mat(ins, mat)
+    else:
+        print >> sys.stderr, 'ERROR the first parameter must be a matrix or a number.'
+        ret = None
+    return ret
+        
   
