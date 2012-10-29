@@ -26,8 +26,8 @@ class Matrix:
             3 2 3
             1 3 4
         its raw expression is: '3,2,3;1,3,4'
-        comma to divide the elements in a row
-        semicolon to divide the different rows
+        use comma to divide the elements in a row
+        use semicolon to divide the different rows
         """
         self.m = -1
         self.n = -1
